@@ -1,0 +1,19 @@
+.section2 {
+  position: relative;
+}
+
+.heroImage {
+  background-color: transparent;
+}
+.regularcheckup {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 5px grey;
+}
+.ticTicImage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
