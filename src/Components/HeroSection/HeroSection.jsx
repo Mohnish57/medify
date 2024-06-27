@@ -25,7 +25,10 @@ const HeroSection = () => {
         >
           Skip the travel! Find Online
         </Typography>
-        <Typography variant="h1" sx={{ fontSize: { md: 40, sm: 16 } }}>
+        <Typography
+          variant="h1"
+          sx={{ fontSize: { md: 40, sm: 16 }, lineHeight: 1 }}
+        >
           Medical
           <span style={{ color: "#2AA7FF" }}> Centers</span>
         </Typography>

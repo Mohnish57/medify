@@ -8,8 +8,6 @@ import { Stack } from "@mui/system";
 import banner from "../../assets/Images/details_cta.png";
 import HospitalCard from "../../Components/HospitalCard/HospitalCard";
 import BookingModal from "../../Components/BookingModal/BookingModal";
-
-import Snackbar from "@mui/material/Snackbar";
 import AutoHideSnackbar from "../../Components/SnackBar/SnackBar";
 
 function DetailsPage() {

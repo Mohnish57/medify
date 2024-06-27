@@ -24,8 +24,9 @@ const Navbar = () => {
       <Box p={1} bgcolor="primary.main">
         <Typography
           textAlign="center"
-          fontSize={{ md: 14, xs: 12 }}
+          fontSize={{ md: 12, xs: 10 }}
           color="#ffff"
+          mx="auto"
         >
           The health and well-being of our patients and their health care team
           will always be our priority, so we follow the best practices for
@@ -60,7 +61,7 @@ const Navbar = () => {
             <Link to="">Software for Provider</Link>
             <Link to="">Facilitates</Link>
             <Link to="/bookings">
-              <Button variant="contained" disableElevation>
+              <Button variant="contained" disableElevation size="small">
                 My Bookings
               </Button>
             </Link>

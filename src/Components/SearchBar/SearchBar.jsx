@@ -27,6 +27,7 @@ const SearchBar = () => {
         setState(response);
       } catch (e) {
         console.log("Error in fetching data from API");
+        alert("Facing Server Issue, try again later");
       }
     };
     fetchState();

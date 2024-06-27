@@ -1,6 +1,8 @@
 .navlinks a {
   color: #102851;
   text-decoration: none;
+  font-size: small;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {
