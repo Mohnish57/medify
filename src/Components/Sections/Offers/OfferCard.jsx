@@ -7,7 +7,7 @@ import offer2 from "../../../assets/Images/offer2.png";
 
 export default function Offers() {
   return (
-    <Box py={6}>
+    <Box py={{ md: 6, xs: 3 }}>
       <Container maxWidth="xl">
         <Swiper
           slidesPerView={3}
@@ -21,6 +21,7 @@ export default function Offers() {
               slidesPerView: 3,
             },
             600: { slidesPerView: 2 },
+            400: { slidesPerView: 2, spaceBetween: 10 },
             200: { slidesPerView: 1 },
           }}
         >
@@ -28,7 +29,7 @@ export default function Offers() {
             <Box
               component={"img"}
               src={offer1}
-              width={{ lg: 400, md: 300, sm: 250, xs: 400 }}
+              width={{ lg: 400, md: 300, sm: 200, xs: 200 }}
             />
           </SwiperSlide>
 
@@ -36,7 +37,7 @@ export default function Offers() {
             <Box
               component={"img"}
               src={offer2}
-              width={{ lg: 400, md: 300, sm: 250, xs: 400 }}
+              width={{ lg: 400, md: 300, sm: 200, xs: 200 }}
             />
           </SwiperSlide>
 
@@ -44,7 +45,7 @@ export default function Offers() {
             <Box
               component={"img"}
               src={offer1}
-              width={{ lg: 400, md: 300, sm: 300, xs: 400 }}
+              width={{ lg: 400, md: 300, sm: 200, xs: 200 }}
             />
           </SwiperSlide>
 
@@ -52,7 +53,7 @@ export default function Offers() {
             <Box
               component={"img"}
               src={offer2}
-              width={{ lg: 400, md: 300, sm: 300, xs: 400 }}
+              width={{ lg: 400, md: 300, sm: 200, xs: 200 }}
             />
           </SwiperSlide>
 
@@ -60,7 +61,7 @@ export default function Offers() {
             <Box
               component={"img"}
               src={offer1}
-              width={{ lg: 400, md: 300, sm: 300, xs: 400 }}
+              width={{ lg: 400, md: 300, sm: 200, xs: 200 }}
             />
           </SwiperSlide>
 
@@ -68,7 +69,7 @@ export default function Offers() {
             <Box
               component={"img"}
               src={offer2}
-              width={{ lg: 400, md: 300, sm: 300, xs: 400 }}
+              width={{ lg: 400, md: 300, sm: 200, xs: 200 }}
             />
           </SwiperSlide>
         </Swiper>

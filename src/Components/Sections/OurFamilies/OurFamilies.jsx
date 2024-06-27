@@ -8,7 +8,11 @@ const OurFamilies = () => {
   return (
     <Box py={5} sx={{ background: "linear-gradient(#E7F0FF, #E8F1FF)" }}>
       <Container>
-        <Stack direction={{ md: "row", sm: "column" }} alignItems="center">
+        <Stack
+          direction={{ md: "row", sm: "column" }}
+          alignItems="center"
+          gap={2}
+        >
           <Box textAlign="left">
             <Typography
               variant="p"
@@ -35,7 +39,12 @@ const OurFamilies = () => {
             </Typography>
           </Box>
           <Box>
-            <img src={banner} width={500} />
+            <Box
+              component="img"
+              src={banner}
+              width={{ md: 500, xs: 300 }}
+              alt="family"
+            />
           </Box>
         </Stack>
       </Container>

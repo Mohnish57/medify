@@ -8,26 +8,32 @@ const HeroSection = () => {
   return (
     <Stack
       direction={{ sm: "column", md: "row" }}
+      gap={1}
       sx={{
-        alignItems: { md: "center", sm: "flex-start" },
+        alignItems: { md: "center" },
         justifyContent: "center",
         padding: "1rem",
         background: "linear-gradient(#E7F0FF, #E8F1FF)",
       }}
+      width="100%"
     >
-      <Box textAlign="left" px={{ md: 20, sm: 10 }}>
+      <Box textAlign="left" px={{ md: 20, sm: 10 }} flex={1}>
         <Typography
           variant="p"
           color="secondary.light"
-          sx={{ fontSize: { md: 20, sm: 12 } }}
+          sx={{ fontSize: { md: 16, sm: 12 } }}
         >
           Skip the travel! Find Online
         </Typography>
-        <Typography variant="h1" sx={{ fontSize: { md: 40, sm: 12 } }}>
+        <Typography variant="h1" sx={{ fontSize: { md: 40, sm: 16 } }}>
           Medical
           <span style={{ color: "#2AA7FF" }}> Centers</span>
         </Typography>
-        <Typography variant="h2" fontWeight={400}>
+        <Typography
+          variant="h2"
+          fontWeight={400}
+          sx={{ fontSize: { md: 18, xs: 14, sm: 14 } }}
+        >
           Connect instantly with 24X7 specialist or choose to video visit a
           particular doctor.
         </Typography>
@@ -43,9 +49,10 @@ const HeroSection = () => {
         </Link>
       </Box>
 
-      <Box className={styles.section2}>
-        <img
-          width={600}
+      <Box className={styles.section2} flex={1}>
+        <Box
+          component="img"
+          sx={{ width: { md: 400, xs: 300, sm: 300 } }}
           className={styles.heroImage}
           src={heroImage}
           alt="HeroImage"
@@ -62,8 +69,9 @@ const HeroSection = () => {
           <img width={20} height={20} src={verifiedIcon} alt="verified" />
           Regular Checkup
         </Stack>
-        <img
-          width={200}
+        <Box
+          component="img"
+          width={{ md: 200, xs: 100, sm: 100 }}
           src={ticTicImage}
           alt="design"
           className={styles.ticTicImage}

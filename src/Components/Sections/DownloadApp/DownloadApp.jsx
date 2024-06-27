@@ -17,18 +17,19 @@ const DownloadApp = () => {
           alignItems="center"
           spacing={10}
         >
-          <Box>
-            <img src={banner} width={500} />
-          </Box>
+          <Box component="img" src={banner} width={{ md: 500, xs: 200 }} />
+
           <Box textAlign="left" sx={{ position: "relative" }}>
-            <img
+            <Box
+              component="img"
               src={arrowIcon}
-              width={50}
+              width={{ md: 50, xs: 0 }}
+              alt="arrow"
               style={{ position: "absolute", left: "-15%", top: 30 }}
             />
             <Typography
               variant="h1"
-              fontSize={40}
+              fontSize={{ md: 40, xs: 24 }}
               fontWeight={700}
               color="primary.dark"
             >
@@ -37,11 +38,15 @@ const DownloadApp = () => {
             <Typography
               variant="h1"
               color="primary.main"
-              fontSize={50}
+              fontSize={{ md: 40, xs: 24 }}
               fontWeight={550}
             >
-              Medify{" "}
-              <Typography variant="span" color="primary.dark">
+              Medify
+              <Typography
+                variant="span"
+                fontSize={{ md: 40, xs: 24 }}
+                color="primary.dark"
+              >
                 App
               </Typography>
             </Typography>

@@ -22,7 +22,11 @@ const Navbar = () => {
   return (
     <header>
       <Box p={1} bgcolor="primary.main">
-        <Typography textAlign="center" fontSize={14} color="#ffff">
+        <Typography
+          textAlign="center"
+          fontSize={{ md: 14, xs: 12 }}
+          color="#ffff"
+        >
           The health and well-being of our patients and their health care team
           will always be our priority, so we follow the best practices for
           cleanliness.

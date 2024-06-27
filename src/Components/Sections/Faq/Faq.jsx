@@ -43,26 +43,40 @@ const Faq = () => {
         <Typography variant="p" color="primary.main" fontWeight={600}>
           Get Your Answer
         </Typography>
-        <Typography variant="h1" color="primary.dark" fontSize={40}>
+        <Typography
+          variant="h1"
+          color="primary.dark"
+          fontSize={{ md: 40, xs: 20 }}
+        >
           Frequently Asked Questions
         </Typography>
-        <Stack direction={{ md: "row", sm: "column" }} alignItems="center">
-          <Box>
-            <img src={banner} width={500} alt="FAQbanner" />
-          </Box>
+        <Stack
+          direction={{ md: "row", sm: "column" }}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Box
+            component="img"
+            src={banner}
+            width={{ md: 500, xs: 300 }}
+            alt="FAQbanner"
+          />
+
           <Box textAlign="left">
-            <div>
-              {data.map((item, index) => (
-                <Accordion key={index}>
-                  <AccordionSummary expandIcon={<PlusIcon />}>
-                    <Typography fontWeight={600} color="primary.dark">
-                      {item.question}
-                    </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>{item.answer}</AccordionDetails>
-                </Accordion>
-              ))}
-            </div>
+            {data.map((item, index) => (
+              <Accordion key={index}>
+                <AccordionSummary expandIcon={<PlusIcon />}>
+                  <Typography
+                    fontWeight={600}
+                    fontSize={{ md: 24, xs: 14 }}
+                    color="primary.dark"
+                  >
+                    {item.question}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>{item.answer}</AccordionDetails>
+              </Accordion>
+            ))}
           </Box>
         </Stack>
       </Container>

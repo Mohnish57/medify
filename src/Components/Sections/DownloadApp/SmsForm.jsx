@@ -11,7 +11,7 @@ function SmsForm() {
     <Box>
       <Typography
         variant="h6"
-        fontSize={18}
+        fontSize={{ md: 24, xs: 14 }}
         fontWeight={500}
         color="primary.dark"
       >

@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
-
+import "../pagination.css";
 import IconCard from "../IconCard/IconCard";
 import drAhmed from "../../../assets/Images/drAhmed.png";
 import drlesley from "../../../assets/Images/drLesley.png";
@@ -27,8 +27,13 @@ const data = [
 
 function Specialists() {
   return (
-    <Box py={6}>
-      <Typography variant="h1" mb={3} color="primary.dark" fontSize={40}>
+    <Box py={{ md: 6, xs: 3 }} textAlign="center">
+      <Typography
+        variant="h1"
+        mb={3}
+        color="primary.dark"
+        fontSize={{ md: 40, xs: 24 }}
+      >
         Our Medical Specialists
       </Typography>
 
@@ -42,6 +47,7 @@ function Specialists() {
         breakpoints={{
           1200: { slidesPerView: 4 },
           800: { slidesPerView: 3 },
+          300: { slidesPerView: 4, spaceBetween: 2 },
         }}
         loop={true}
         centeredSlides={true}

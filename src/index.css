@@ -13,9 +13,31 @@ body {
   font-family: "poppins", "sans-serif";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-bottom: 5px;
+}
+
+.swiper-pagination-bullet {
+  height: 10px;
+  width: 10px;
+  background: #bcd8e9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #2aa7ff;
+  outline: 1px solid #2aa7ff;
+  outline-offset: 4px;
 }
