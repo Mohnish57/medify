@@ -39,9 +39,10 @@ function IconCard({
         />
         <Typography
           color="black"
-          fontSize={{ md: 18, sm: 14, xs: 12 }}
+          fontSize={
+            designation ? { md: 18, xs: 12 } : { md: 14, sm: 14, xs: 12 }
+          }
           fontWeight={specialization ? 600 : 400}
-          width="fit-content"
         >
           {title}
         </Typography>

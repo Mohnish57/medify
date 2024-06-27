@@ -18,7 +18,12 @@
   .active {
     transform: translateX(0%);
   }
+  .navlinks a:nth-child(1) {
+    margin-top: 3rem;
+  }
   .navlinks a {
     color: #ffff;
+    margin-bottom: 1rem;
+    text-align: left;
   }
 }

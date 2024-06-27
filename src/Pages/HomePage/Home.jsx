@@ -28,7 +28,7 @@ const Home = () => {
           <Navbar />
           <HeroSection />
 
-          <Container maxWidth="xl">
+          <Container maxWidth="xl" sx={{ transform: "translatey(-5%)" }}>
             <Stack
               direction="column"
               p={{ xs: 2.5, md: 8 }}
@@ -37,7 +37,7 @@ const Home = () => {
               zIndex={99}
               bgcolor="#fff"
               borderRadius="15px"
-              spacing={10}
+              gap={1}
               boxShadow="0 0 12px rgba(0,0,0,0.1)"
             >
               <SearchBar />

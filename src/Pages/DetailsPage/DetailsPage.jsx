@@ -96,7 +96,7 @@ function DetailsPage() {
               </Box>
 
               <Box>
-                <img src={banner} alt="banner" width={400} />
+                <img src={banner} alt="banner" width={250} />
               </Box>
             </Stack>
           </Container>

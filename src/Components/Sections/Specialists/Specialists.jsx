@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
-import "../pagination.css";
+
 import IconCard from "../IconCard/IconCard";
 import drAhmed from "../../../assets/Images/drAhmed.png";
 import drlesley from "../../../assets/Images/drLesley.png";
