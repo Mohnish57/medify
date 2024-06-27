@@ -51,7 +51,7 @@ function TimeSlotPicker({
               <CustomChip
                 key={slot}
                 label={slot}
-                onClick={() => handleClick(slot)}
+                handleClick={() => handleClick(slot)}
               />
             ))}
           </Stack>
@@ -64,7 +64,7 @@ function TimeSlotPicker({
               <CustomChip
                 key={slot}
                 label={slot}
-                onClick={() => handleClick(slot)}
+                handleClick={() => handleClick(slot)}
               />
             ))}
           </Stack>

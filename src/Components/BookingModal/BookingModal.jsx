@@ -4,14 +4,33 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Stack, Box, TextField } from "@mui/material";
+import { format } from "date-fns";
 
 function BookingModal({ open, setOpen, bookingDetails, showSuccessMessage }) {
   const [email, setEmail] = useState("");
 
   const handleBooking = (e) => {
     e.preventDefault();
+    const oldBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+
+    localStorage.setItem(
+      "bookings",
+      JSON.stringify([
+        ...oldBookings,
+        { ...bookingDetails, bookingEmail: email },
+      ])
+    );
+
     showSuccessMessage(true);
     setOpen(false);
+  };
+  const formatDate = (day) => {
+    if (day) {
+      const date = new Date(day);
+      return format(date, "E, d LLL");
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -35,8 +54,12 @@ function BookingModal({ open, setOpen, bookingDetails, showSuccessMessage }) {
           Confirm Booking
         </Typography>
         <Typography sx={{ my: 2 }}>
-          {`Please enter your email for ${bookingDetails.bookingTime} on
-          ${bookingDetails.bookingDate}`}
+          Please enter your email for
+          <Typography component="span" sx={{ ml: 1 }} fontWeight={600}>
+            {`${bookingDetails.bookingTime} on ${formatDate(
+              bookingDetails.bookingDate
+            )}`}
+          </Typography>
         </Typography>
         <form onSubmit={handleBooking}>
           <Stack spacing={2} direction="column">

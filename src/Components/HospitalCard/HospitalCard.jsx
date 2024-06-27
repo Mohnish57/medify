@@ -10,6 +10,7 @@ function HospitalCard({
   availableSlots,
   booking = false,
   handleBooking,
+  bookingPage = "false",
 }) {
   const [showCalender, setShowCalender] = useState(false);
   return (
@@ -76,31 +77,33 @@ function HospitalCard({
               </Stack>
             </Box>
           </Box>
-          <Box>
-            {!booking && (
-              <Typography
-                textAlign="center"
-                color="primary.green"
-                fontSize={12}
-                fontWeight={500}
-                mb={1}
+          {!bookingPage && (
+            <Box>
+              {!booking && (
+                <Typography
+                  textAlign="center"
+                  color="primary.green"
+                  fontSize={12}
+                  fontWeight={500}
+                  mb={1}
+                >
+                  Available Today
+                </Typography>
+              )}
+              <Button
+                size="small"
+                onClick={() => setShowCalender((prev) => !prev)}
+                variant="contained"
+                disableElevation
               >
-                Available Today
-              </Typography>
-            )}
-            <Button
-              size="small"
-              onClick={() => setShowCalender((prev) => !prev)}
-              variant="contained"
-              disableElevation
-            >
-              <Typography fontSize={{ md: 10 }} fontWeight={500}>
-                {!showCalender
-                  ? "Book FREE Center Visit"
-                  : "Hide Booking Calender"}
-              </Typography>
-            </Button>
-          </Box>
+                <Typography fontSize={{ md: 10 }} fontWeight={500}>
+                  {!showCalender
+                    ? "Book FREE Center Visit"
+                    : "Hide Booking Calender"}
+                </Typography>
+              </Button>
+            </Box>
+          )}
         </Stack>
 
         {showCalender && (
