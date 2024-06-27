@@ -39,33 +39,35 @@ function MyBookings() {
             My Bookings
           </Typography>
 
-          {bookings
-            ? bookings.map((hospital) => (
-                <>
-                  <Box mb={2} bgcolor={"#fff"} borderRadius={5} py={2}>
-                    <Container>
-                      <Stack direction="column" alignItems="left" spacing={1}>
-                        <HospitalCard details={hospital} bookingPage="true" />
-                        <Stack direction="row" spacing={1} px={2}>
-                          <Chip
-                            sx={{ borderRadius: 1, fontWeight: 600 }}
-                            color="primary"
-                            variant="outlined"
-                            label={formatDate(hospital.bookingDate)}
-                          />
-                          <Chip
-                            sx={{ borderRadius: 1, fontWeight: 600 }}
-                            color="success"
-                            variant="outlined"
-                            label={hospital.bookingTime}
-                          />
-                        </Stack>
+          {bookings.length > 0 ? (
+            bookings.map((hospital) => (
+              <>
+                <Box mb={2} bgcolor={"#fff"} borderRadius={5} py={2}>
+                  <Container>
+                    <Stack direction="column" alignItems="left" spacing={1}>
+                      <HospitalCard details={hospital} bookingPage="true" />
+                      <Stack direction="row" spacing={1} px={2}>
+                        <Chip
+                          sx={{ borderRadius: 1, fontWeight: 600 }}
+                          color="primary"
+                          variant="outlined"
+                          label={formatDate(hospital.bookingDate)}
+                        />
+                        <Chip
+                          sx={{ borderRadius: 1, fontWeight: 600 }}
+                          color="success"
+                          variant="outlined"
+                          label={hospital.bookingTime}
+                        />
                       </Stack>
-                    </Container>
-                  </Box>
-                </>
-              ))
-            : "No Bookings Found"}
+                    </Stack>
+                  </Container>
+                </Box>
+              </>
+            ))
+          ) : (
+            <Typography>No Bookings Found!</Typography>
+          )}
         </Container>
       </Box>
     </>
