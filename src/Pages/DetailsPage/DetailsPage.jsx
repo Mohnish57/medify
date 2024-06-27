@@ -13,7 +13,7 @@ function DetailsPage() {
   const [state, setState] = useState(searchParams.get("state"));
   const [city, setCity] = useState(searchParams.get("city"));
   const [hospitals, setHospitals] = useState([]);
-  const [IsLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const availableSlots = {
     morning: ["11:30 AM"],
@@ -39,6 +39,11 @@ function DetailsPage() {
       setIsLoading(false);
     }
   }, [state, city]);
+
+  useEffect(() => {
+    setState(searchParams.get("state"));
+    setCity(searchParams.get("city"));
+  }, [searchParams]);
 
   return (
     <>
@@ -77,7 +82,7 @@ function DetailsPage() {
           <Container maxWidth="xl">
             <Stack direction={{ md: "row", sm: "column" }} gap={4}>
               <Box width={{ xs: 1, md: "calc(100% - 384px)" }}>
-                {hospitals.length > 0 ? (
+                {hospitals.length > 0 &&
                   hospitals.map((item) => (
                     <HospitalCard
                       name={item["Hospital Name"]}
@@ -87,11 +92,22 @@ function DetailsPage() {
                       rating={item["Hospital overall rating"]}
                       availableSlots={availableSlots}
                     />
-                  ))
-                ) : (
+                  ))}
+                {!state && (
                   <Box p={2}>
                     <Typography>Please select a state and city</Typography>
                   </Box>
+                )}
+
+                {isLoading && (
+                  <Typography
+                    variant="h3"
+                    bgcolor="#fff"
+                    p={3}
+                    borderRadius={2}
+                  >
+                    Loading...
+                  </Typography>
                 )}
               </Box>
 
