@@ -7,6 +7,10 @@ import axios from "axios";
 import { Stack } from "@mui/system";
 import banner from "../../assets/Images/details_cta.png";
 import HospitalCard from "../../Components/HospitalCard/HospitalCard";
+import BookingModal from "../../Components/BookingModal/BookingModal";
+
+import Snackbar from "@mui/material/Snackbar";
+import AutoHideSnackbar from "../../Components/SnackBar/SnackBar";
 
 function DetailsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,6 +18,9 @@ function DetailsPage() {
   const [city, setCity] = useState(searchParams.get("city"));
   const [hospitals, setHospitals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [bookingDetails, setBookingDetails] = useState({});
+  const [showBookingSuccess, setShowBookingSuccess] = useState(false);
 
   const availableSlots = {
     morning: ["11:30 AM"],
@@ -44,6 +51,11 @@ function DetailsPage() {
     setState(searchParams.get("state"));
     setCity(searchParams.get("city"));
   }, [searchParams]);
+
+  const handleBookingModal = (details) => {
+    setBookingDetails(details);
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -85,12 +97,10 @@ function DetailsPage() {
                 {hospitals.length > 0 &&
                   hospitals.map((item) => (
                     <HospitalCard
-                      name={item["Hospital Name"]}
-                      city={item["City"]}
-                      state={item["State"]}
-                      type={item["Hospital Type"]}
-                      rating={item["Hospital overall rating"]}
+                      key={item["Hospital Name"]}
+                      details={item}
                       availableSlots={availableSlots}
+                      handleBooking={handleBookingModal}
                     />
                   ))}
                 {!state && (
@@ -117,6 +127,23 @@ function DetailsPage() {
             </Stack>
           </Container>
         </Box>
+
+        {isModalOpen && (
+          <BookingModal
+            open={isModalOpen}
+            setOpen={setIsModalOpen}
+            bookingDetails={bookingDetails}
+            showSuccessMessage={setShowBookingSuccess}
+          />
+        )}
+        {showBookingSuccess && (
+          <AutoHideSnackbar
+            open={showBookingSuccess}
+            autoHideDuration={2000}
+            message="Booking Successful"
+            setOpen={setShowBookingSuccess}
+          />
+        )}
       </Box>
     </>
   );

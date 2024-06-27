@@ -54,7 +54,6 @@ const SearchBar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (selectedState && selectedCity) {
-      console.log("inside handlesubmit");
       navigate(`/search?state=${selectedState}&city=${selectedCity}`);
     }
   };
