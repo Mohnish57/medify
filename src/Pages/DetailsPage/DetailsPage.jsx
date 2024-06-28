@@ -9,6 +9,7 @@ import banner from "../../assets/Images/details_cta.png";
 import HospitalCard from "../../Components/HospitalCard/HospitalCard";
 import BookingModal from "../../Components/BookingModal/BookingModal";
 import AutoHideSnackbar from "../../Components/SnackBar/SnackBar";
+import icon from "../../assets/Icons/verifiedIcon.png";
 
 function DetailsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -87,7 +88,39 @@ function DetailsPage() {
             <SearchBar />
           </Container>
         </Box>
+        {hospitals.length > 0 && (
+          <Box sx={{ py: 3 }}>
+            <Container maxWidth="xl">
+              <Typography
+                fontSize={{ md: 24, sm: 14 }}
+                lineHeight={1.1}
+                mb={2}
+                textAlign={"left"}
+                fontWeight={500}
+              >
+                {`${hospitals.length} medical center${
+                  hospitals.length > 1 ? "s" : ""
+                } available in `}
+                <span style={{ textTransform: "capitalize" }}>
+                  {city.toLocaleLowerCase()}
+                </span>
+              </Typography>
 
+              <Stack direction="row" spacing={2} alignItems={"center"}>
+                <img src={icon} height={24} width={24} alt="icon" />
+                <Typography
+                  color="#787887"
+                  fontSize={{ md: 20, sm: 10 }}
+                  lineHeight={1.4}
+                  textAlign="left"
+                >
+                  Book appointments with minimum wait-time & verified doctor
+                  details
+                </Typography>
+              </Stack>
+            </Container>
+          </Box>
+        )}
         <Box py={2}>
           <Container maxWidth="xl">
             <Stack direction={{ md: "row", sm: "column" }} gap={4}>
