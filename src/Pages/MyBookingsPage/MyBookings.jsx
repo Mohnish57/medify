@@ -45,7 +45,7 @@ function MyBookings() {
                 <Box mb={2} bgcolor={"#fff"} borderRadius={5} py={2}>
                   <Container>
                     <Stack direction="column" alignItems="left" spacing={1}>
-                      <HospitalCard details={hospital} bookingPage="true" />
+                      <HospitalCard details={hospital} bookingPage />
                       <Stack direction="row" spacing={1} px={2}>
                         <Chip
                           sx={{ borderRadius: 1, fontWeight: 600 }}

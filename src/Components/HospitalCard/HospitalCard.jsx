@@ -10,7 +10,7 @@ function HospitalCard({
   availableSlots,
   booking = false,
   handleBooking,
-  bookingPage = "false",
+  bookingPage = false,
 }) {
   const [showCalender, setShowCalender] = useState(false);
   return (
@@ -19,7 +19,7 @@ function HospitalCard({
         <Stack
           direction={{ md: "row", sm: "column" }}
           justifyContent="space-between"
-          alignItems="end"
+          alignItems={{ md: "end", xs: "center" }}
         >
           <Box>
             <Stack direction="row" flexWrap="wrap" spacing={2} mb={2}>
@@ -77,13 +77,14 @@ function HospitalCard({
               </Stack>
             </Box>
           </Box>
+
           {!bookingPage && (
-            <Box>
+            <Box minWidth={"30%"}>
               {!booking && (
                 <Typography
                   textAlign="center"
                   color="primary.green"
-                  fontSize={12}
+                  fontSize={14}
                   fontWeight={500}
                   mb={1}
                 >
@@ -91,12 +92,12 @@ function HospitalCard({
                 </Typography>
               )}
               <Button
-                size="small"
                 onClick={() => setShowCalender((prev) => !prev)}
                 variant="contained"
                 disableElevation
+                fullWidth
               >
-                <Typography fontSize={{ md: 10 }} fontWeight={500}>
+                <Typography fontSize={14} fontWeight={500}>
                   {!showCalender
                     ? "Book FREE Center Visit"
                     : "Hide Booking Calender"}
