@@ -45,9 +45,9 @@ function Specialists() {
           clickable: true,
         }}
         breakpoints={{
-          1200: { slidesPerView: 4 },
+          1200: { slidesPerView: 4, spaceBetween: 5 },
           800: { slidesPerView: 3 },
-          300: { slidesPerView: 4, spaceBetween: 2 },
+          300: { slidesPerView: 3, spaceBetween: 5 },
         }}
         loop={true}
         centeredSlides={true}
