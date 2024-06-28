@@ -136,7 +136,15 @@ function DetailsPage() {
                   ))}
                 {!state && (
                   <Box p={2}>
-                    <Typography>Please select a state and city</Typography>
+                    <Typography
+                      variant="h3"
+                      bgcolor="#fff"
+                      p={3}
+                      borderRadius={2}
+                      textAlign="left"
+                    >
+                      Please select a state and city
+                    </Typography>
                   </Box>
                 )}
 

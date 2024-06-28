@@ -33,55 +33,61 @@ const Navbar = () => {
           cleanliness.
         </Typography>
       </Box>
-
-      <Container maxWidth="xl" sx={{ bgcolor: "transparent" }}>
-        <Stack
-          direction="row"
-          spacing={2}
-          alignItems="center"
-          justifyContent="space-between"
-          py={2}
-          px={4}
-        >
-          <Link to="/">
-            <img src={logo} alt="Logo" height={27} />
-          </Link>
-
+      <Box bgcolor="#ffff">
+        <Container maxWidth="xl">
           <Stack
-            direction={{ sm: "column", md: "row" }}
-            spacing={4}
-            alignItems={{ sm: "flex-start", md: "center" }}
+            direction="row"
+            spacing={2}
+            alignItems="center"
             justifyContent="space-between"
-            className={[styles.navlinks, menuOpen && styles.active]}
+            py={2}
+            px={4}
           >
-            <Link to="">Find Doctors</Link>
-            <Link to="/search">Hospitals</Link>
-            <Link to="">Medicines</Link>
-            <Link to="">Surgeries</Link>
-            <Link to="">Software for Provider</Link>
-            <Link to="">Facilitates</Link>
-            <Link to="/bookings">
-              <Button variant="contained" disableElevation size="small">
-                My Bookings
-              </Button>
+            <Link to="/">
+              <img src={logo} alt="Logo" height={27} />
             </Link>
+
+            <Stack
+              direction={{ sm: "column", md: "row" }}
+              spacing={4}
+              alignItems={{ sm: "flex-start", md: "center" }}
+              justifyContent="space-between"
+              className={[styles.navlinks, menuOpen && styles.active]}
+            >
+              <Link to="">Find Doctors</Link>
+              <Link to="/search">Hospitals</Link>
+              <Link to="">Medicines</Link>
+              <Link to="">Surgeries</Link>
+              <Link to="">Software for Provider</Link>
+              <Link to="">Facilitates</Link>
+              <Link to="/bookings">
+                <Button variant="contained" disableElevation size="small">
+                  My Bookings
+                </Button>
+              </Link>
+              {isMobile && (
+                <IconButton
+                  onClick={() => setMenuOpen(false)}
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    right: 32,
+                    color: "#fff",
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+              )}
+            </Stack>
+
             {isMobile && (
-              <IconButton
-                onClick={() => setMenuOpen(false)}
-                sx={{ position: "absolute", top: 0, right: 32, color: "#fff" }}
-              >
-                <CloseIcon />
+              <IconButton onClick={() => setMenuOpen(true)}>
+                <MenuIcon />
               </IconButton>
             )}
           </Stack>
-
-          {isMobile && (
-            <IconButton onClick={() => setMenuOpen(true)}>
-              <MenuIcon />
-            </IconButton>
-          )}
-        </Stack>
-      </Container>
+        </Container>
+      </Box>
     </header>
   );
 };
