@@ -55,7 +55,7 @@ const HeroSection = () => {
       <Box className={styles.section2} flex={1}>
         <Box
           component="img"
-          sx={{ width: { md: 400, xs: 300, sm: 300 } }}
+          sx={{ width: { md: 600, xs: 300, sm: 300 } }}
           className={styles.heroImage}
           src={heroImage}
           alt="HeroImage"
